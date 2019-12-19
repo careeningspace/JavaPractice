@@ -1,7 +1,13 @@
 package com.elliottklug.JavaPractice;
 
+import java.util.Comparator;
+import java.util.Objects;
+
 public class Product implements Comparable<Product>  
 {
+	public static final Comparator<Product> BY_NAME = Comparator.comparing(Product::getName);
+	public static final Comparator<Product> BY_WEIGHT = Comparator.comparing(Product::getWeight);
+	
 	private final String name;
 	private final int weight;
 	
@@ -21,10 +27,31 @@ public class Product implements Comparable<Product>
 				", weight= " + weight + '}'; 
 	}
 
-
 	@Override
 	public int compareTo(Product o) 
 	{
 		return this.weight - o.weight;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, weight);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Product other = (Product) obj;
+		return Objects.equals(name, other.name) && weight == other.weight;
+	}
+	
+	
 }

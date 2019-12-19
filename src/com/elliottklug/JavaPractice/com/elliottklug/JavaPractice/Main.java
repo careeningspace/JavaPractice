@@ -8,8 +8,8 @@ public class Main {
 *        websiteClass.printURLs();
 */        
         Shipment shipment = new Shipment();
-        List<Product> lightShipment;
-    	List<Product> heavyShipment;
+//        List<Product> lightShipment;
+//    	List<Product> heavyShipment;
 
 		shipment.add(ProductFixtures.door);
 		shipment.add(ProductFixtures.window);
@@ -20,19 +20,20 @@ public class Main {
 //		for (Product product : shipment)
 //			System.out.println(product.toString());
 		shipment.prepare();
-//		for (Product product : shipment)
-//			System.out.println(product.toString());
-		System.out.println(shipment.getHeavyVanProducts());
+		for (Product product : shipment)
+			System.out.println(product.toString());
+//		System.out.println(shipment.getHeavyVanProducts());
+		System.out.println(shipment.getHeavyVanProducts().size());
 		System.out.println();
 		for (Product product : shipment.getHeavyVanProducts())
 			System.out.println(product.toString());
-		
-		heavyShipment = shipment.getHeavyVanProducts();
-		lightShipment = shipment.getLightVanProducts();
-		System.out.println(heavyShipment.size());
-		System.out.println(lightShipment.size());
+		System.out.println();
+//		heavyShipment = shipment.getHeavyVanProducts();
+//		lightShipment = shipment.getLightVanProducts();
 
-		for (Product product : heavyShipment)
+		System.out.println(shipment.getLightVanProducts().size());
+		System.out.println();
+		for (Product product : shipment.getLightVanProducts())
 			System.out.println(product.toString());
     }
     
