@@ -42,12 +42,13 @@ public class Main {
 		helpDesk.enquire(Customer.JACK, Category.PRINTER);
 
 		
-//		helpDesk.processAllEnquires();
-
+		helpDesk.processAllEnquires();
+		/*
 		helpDesk.processPrinterEnquiry();
 		helpDesk.processPrinterEnquiry();
 		helpDesk.processGeneralEnquiry();
 		helpDesk.processPrinterEnquiry();
+		*/
     }
     
 
